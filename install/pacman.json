@@ -1,0 +1,26 @@
+{
+    "name": "pacman",
+    "description": "cli extension for package management. It helps you to install/uninstall packages and to configure bundle dependencies.",
+    "flags": [
+        {
+            "name": "install",
+            "description": "Installs npm package and sets bundle dependencies",
+            "type": "string"
+        },
+        {
+            "name": "uninstall",
+            "description": "Uninstalls npm package and removes bundle dependencies",
+            "type": "string"
+        },
+        {
+            "name": "bundle",
+            "description": "Sets bundle section to be modified",
+            "type": "string"
+        },
+        {
+            "name": "force",
+            "description": "Overwrite previously set dependencies. This applies only to dependencies of the given package!",
+            "type": "boolean"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "name": "jquery",
+    "path": "../node_modules/jquery/dist",
+    "main": "jquery.min"
+  }
+]

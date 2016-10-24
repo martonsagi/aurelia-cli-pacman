@@ -1,0 +1,28 @@
+{
+  "name": "aurelia-cli-pacman",
+  "version": "0.0.1",
+  "author": "Marton Sagi <hello@martonsagi.me>",
+  "description": "Extension to provide aurelia-cli with package management capabilities",
+  "homepage": "https://github.com/martonsagi/aurelia-cli-pacman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martonsagi/aurelia-cli-pacman/issues"
+  },
+  "keywords": [
+    "aurelia",
+    "cli",
+    "pacman",
+    "installation"
+  ],
+  "main": "index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martonsagi/aurelia-cli-pacman"
+  },
+  "scripts": {
+    "postinstall": "node ./install/post-install.js"
+  },
+  "dependencies": {
+    "fs-extra": "^0.30.0"
+  }
+}
