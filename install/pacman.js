@@ -48,7 +48,7 @@ export default () => {
 
     if (!cliParams.action) {
         console.log(`Invalid or no action given. Please use one of these:\n`);
-        for (let action of allowedActions) {
+        for (let action of pacMan.allowedActions) {
             console.log(`  au pacman --${action.join('/')} <package name>`);
         }
         return;
