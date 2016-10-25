@@ -1,6 +1,6 @@
 {
   "name": "aurelia-cli-pacman",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Marton Sagi <hello@martonsagi.me>",
   "description": "Extension to provide aurelia-cli with package management capabilities",
   "homepage": "https://github.com/martonsagi/aurelia-cli-pacman",
@@ -23,6 +23,8 @@
     "postinstall": "node ./install/post-install.js"
   },
   "dependencies": {
-    "fs-extra": "^0.30.0"
+    "aurelia-cli": "^0.21.0",
+    "fs-extra": "^0.30.0",
+    "rfc6902": "^1.2.2"
   }
 }

@@ -1,0 +1,11 @@
+{
+    "patches": null,
+    "dependencies": [
+        "jquery",
+        {
+            "name": "kendo-ui-core",
+            "path": "../node_modules/kendo-ui-core/",
+            "main": "js/kendo.ui.core"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "patches": [
+        { "op": "replace", "path": "/build/loader/plugins/0/stub", "value": false}
+    ],
+    "dependencies": [
+        {
+            "name": "aurelia-kendoui-bridge",
+            "path": "../node_modules/aurelia-kendoui-bridge/dist/amd",
+            "main": "index"
+        }
+    ]
+}

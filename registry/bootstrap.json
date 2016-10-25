@@ -1,14 +1,19 @@
-[
-  {
-    "name": "jquery",
-    "path": "../node_modules/jquery/dist",
-    "main": "jquery.min"
-  },
-  {
-    "name": "bootstrap",
-    "path": "../node_modules/bootstrap/dist",
-    "main": "js/bootstrap.min",
-    "deps": ["jquery"],
-    "exports": "$"
-  }
-]
+{
+    "patches": null,
+    "dependencies": [
+        {
+            "name": "jquery",
+            "path": "../node_modules/jquery/dist",
+            "main": "jquery.min"
+        },
+        {
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.min",
+            "deps": [
+                "jquery"
+            ],
+            "exports": "$"
+        }
+    ]
+}

@@ -1,7 +1,10 @@
-[
-  {
-    "name": "jquery",
-    "path": "../node_modules/jquery/dist",
-    "main": "jquery.min"
-  }
-]
+{
+    "patches": null,
+    "dependencies": [
+        {
+            "name": "jquery",
+            "path": "../node_modules/jquery/dist",
+            "main": "jquery.min"
+        }
+    ]
+}
