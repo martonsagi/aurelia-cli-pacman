@@ -54,13 +54,14 @@ export default () => {
         return;
     }
 
-    let tasks = [getProject(), pacMan.getDependencies(cliParams.pkg)];
+    let tasks = [getProject(), pacMan.getConfig(cliParams.pkg)];
 
     return Promise
         .all(tasks)
         .then(result => {
-            return pacMan[cliParams.action](cliParams.pkg)
-                .then(ok => pacMan.configure(cliParams, ...result));
+            //return pacMan[cliParams.action](cliParams.pkg)
+            //    .then(ok => pacMan.configure(cliParams, ...result));
+            return pacMan.configure(cliParams, ...result);
         })
         .catch(err => { throw new Error(err); });
 };

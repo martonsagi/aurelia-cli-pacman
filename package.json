@@ -1,6 +1,6 @@
 {
   "name": "aurelia-cli-pacman",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Marton Sagi <hello@martonsagi.me>",
   "description": "Extension to provide aurelia-cli with package management capabilities",
   "homepage": "https://github.com/martonsagi/aurelia-cli-pacman",

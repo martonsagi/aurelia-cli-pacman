@@ -1,0 +1,10 @@
+{
+    "patches": null,
+    "dependencies": [
+        "jquery",
+        {
+            "name": "kendo",
+            "path": "../node_modules/kendo/"
+        }
+    ]
+}
