@@ -50,4 +50,5 @@ There is a small dependency collection for several basic aurelia plugins and oth
 ## 4. Platform Support
 
 This extension can be used with **NodeJS** only. It's executed within `aurelia-cli` infrastructure.
+Supported NodeJS version: 4.x or above.
 
