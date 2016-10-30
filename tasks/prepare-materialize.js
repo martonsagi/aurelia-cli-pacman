@@ -18,5 +18,14 @@ let taskFonts = () => {
         );
 };
 
-export default gulp.series(gulp.parallel.apply(gulp, [taskFonts, taskCss]));
+let taskTools = () => {
+    // copy tools folder from ./node_modules/aurelia-materialize-bridge/<path> to /<dest>
+    return gulp
+        .src(['./node_modules/aurelia-materialize-bridge/tools/*'])
+        .pipe(
+            gulp.dest('tools')
+        );
+};
+
+export default gulp.series(gulp.parallel.apply(gulp, [taskFonts, taskCss, taskTools]));
 

@@ -74,8 +74,8 @@
     ],
     "scripts": {
         "install": [
-            "node node_modules/requirejs/bin/r.js -o tools/rbuild.js",
-            "au prepare-materialize"
+            "au prepare-materialize",
+            "node node_modules/requirejs/bin/r.js -o tools/rbuild.js"
         ],
         "uninstall": [
 

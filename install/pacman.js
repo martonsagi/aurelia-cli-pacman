@@ -12,56 +12,33 @@
 
 import * as fs from 'fs-extra';
 import {CLIOptions} from 'aurelia-cli';
-import {PacMan} from 'aurelia-cli-pacman';
-
-/**
- * Reads aurelia.json
- *
- * Using this, because default import statement would
- * add a "default" member to the original object
- * causing problems at saving
- *
- * @return {Promise|Promise<any>}
- */
-let getProject = () => {
-    return new Promise((resolve, reject) => {
-        let path = 'aurelia_project/aurelia.json';
-        fs.readJson(path, (err, content) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(content);
-            }
-        });
-    });
-};
+import {ImportEngine, ImportBase, Analyzer, NpmProvider} from 'aurelia-cli-pacman';
 
 /**
  * Execute
  */
 export default () => {
-    // package manager
-    let pacMan = new PacMan(CLIOptions);
 
-    // collect given parameters
-    let cliParams = pacMan.getCliParams();
+    let npmProvider = new NpmProvider();
 
-    if (!cliParams.action) {
-        console.log(`Invalid or no action given. Please use one of these:\n`);
-        for (let action of pacMan.allowedActions) {
-            console.log(`  au pacman --${action.join('/')} <package name>`);
-        }
-        return;
-    }
+    let analyzer = new Analyzer(CLIOptions);
+    analyzer
+        // analyze contextual information (CLI parameters, given package)
+        .execute()
 
-    let tasks = [getProject(), pacMan.getConfig(cliParams.pkg)];
+        // manage package using NPM (OPTIONAL, commented out by default)
+        //.then(result => npmProvider[result.options.action](result.options.pkg))
 
-    return Promise
-        .all(tasks)
-        .then(result => {
-            //return pacMan[cliParams.action](cliParams.pkg)
-            //    .then(ok => pacMan.configure(cliParams, ...result));
-            return pacMan.configure(cliParams, ...result);
+        // configure aurelia.json, install custom tasks, run additional scripts
+        .then(() => {
+            let engine = new ImportEngine(
+                analyzer.result.project,
+                analyzer.result.config,
+                [new ImportBase()]
+            );
+
+            return engine.execute(analyzer.result.options);
         })
-        .catch(err => { throw new Error(err); });
+        .catch(e => console.log(e));
+
 };

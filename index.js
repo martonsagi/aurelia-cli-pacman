@@ -1,3 +1,6 @@
 "use strict";
 
-exports.PacMan = require('./lib/common').PacMan;
+exports.ImportEngine = require('./lib/import-engine');
+exports.ImportBase = require('./lib/import-base');
+exports.Analyzer = require('./lib/analyzer');
+exports.NpmProvider = require('./lib/providers/npm-provider');
