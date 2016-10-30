@@ -19,15 +19,16 @@ import {ImportEngine, ImportBase, Analyzer, NpmProvider} from 'aurelia-cli-pacma
  */
 export default () => {
 
-    let npmProvider = new NpmProvider();
-
     let analyzer = new Analyzer(CLIOptions);
     analyzer
         // analyze contextual information (CLI parameters, given package)
         .execute()
 
         // manage package using NPM (OPTIONAL, commented out by default)
-        //.then(result => npmProvider[result.options.action](result.options.pkg))
+        /*.then(result => {
+            let npmProvider = new NpmProvider();
+            return npmProvider[result.options.action](result.options.pkg);
+        })*/
 
         // configure aurelia.json, install custom tasks, run additional scripts
         .then(() => {
