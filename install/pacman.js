@@ -19,16 +19,21 @@ import {ImportEngine, ImportBase, Analyzer, NpmProvider} from 'aurelia-cli-pacma
 export default () => {
 
     let analyzer = new Analyzer(CLIOptions);
+
+    // remove /**/ to manage packages with NPM (OPTIONAL, commented out by default)
+    /*
+    let cliParams = analyzer.getCliParams();
+    let npmProvider = new NpmProvider();
+    npmProvider[cliParams.action](cliParams.pkg)
+        .then(() => analyzer.execute())
+    */
+
+    // remove /**/ to go on without package management (default)
+    ///*
     analyzer
         // analyze contextual information (CLI parameters, given package)
         .execute()
-
-        // manage package using NPM (OPTIONAL, commented out by default)
-        /*.then(result => {
-            let npmProvider = new NpmProvider();
-            return npmProvider[result.options.action](result.options.pkg);
-        })*/
-
+    //*/
         // configure aurelia.json, install custom tasks, run additional scripts
         .then(() => {
             let engine = new ImportEngine(
