@@ -1,6 +1,6 @@
 {
   "name": "aurelia-cli-pacman",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "Marton Sagi <hello@martonsagi.me>",
   "description": "Extension to provide aurelia-cli with package management capabilities",
   "homepage": "https://github.com/martonsagi/aurelia-cli-pacman",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "aurelia-cli": "^0.21.0",
+    "bluebird": "^3.4.1",
     "fs-extra": "^0.30.0",
     "rfc6902": "^1.2.2"
   }
