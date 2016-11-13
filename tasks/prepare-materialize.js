@@ -21,7 +21,7 @@ let taskFonts = () => {
 let taskTools = () => {
     // copy tools folder from ./node_modules/aurelia-materialize-bridge/<path> to /<dest>
     return gulp
-        .src(['./node_modules/aurelia-materialize-bridge/build/tools/*'])
+        .src(['./node_modules/aurelia-materialize-bridge/build/tools/*.js'])
         .pipe(
             gulp.dest('.')
         );
