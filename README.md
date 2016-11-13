@@ -52,3 +52,7 @@ There is a small dependency collection for several basic aurelia plugins and oth
 This extension can be used with **NodeJS** only. It's executed within `aurelia-cli` infrastructure.
 Supported NodeJS version: 4.x or above.
 
+## 5. Documentation
+
+This plugin is currently being developed. The initial specification and current implementation can be found in [this gitbook](https://aurelia-ui-toolkits.gitbooks.io/monterey-developer-manual/content/infrastructure/aurelia_import/initial_state.html#).
+
